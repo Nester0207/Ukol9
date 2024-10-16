@@ -6,3 +6,15 @@ function zmenBarvu () {
     body.style.backgroundColor = "rgb(" + cervena + "," + zelena + "," + modra + ")";
     } 
 
+let spustiBarvu = document.querySelectorAll("#button")[0];
+let zastavBarvu = document.querySelectorAll("#button")[1];
+
+spustiBarvu.addEventListener("click", () => {
+    let cas = setInterval(() => {
+        zmenBarvu();
+    }, 3000);
+
+    zastavBarvu.addEventListener("click", () => {
+        clearInterval(cas);
+    })
+});
